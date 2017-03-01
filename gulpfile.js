@@ -1,12 +1,11 @@
 const gulp = require('gulp');
 const babel = require('gulp-babel');
-const webpack = require('webpack');
 const ngc = require('gulp-ngc');
 const jsonTransform = require('gulp-json-transform');
 const clean = require('gulp-clean');
+const rollup = require('rollup');
 const commonjs = require('rollup-plugin-commonjs');
 const nodeResolve = require('rollup-plugin-node-resolve');
-const rollup = require('rollup');
 const sourcemaps = require('rollup-plugin-sourcemaps');
 
 gulp.task('ngc', () => {
@@ -16,7 +15,6 @@ gulp.task('ngc', () => {
 gulp.task('bundle', ['ngc'], done => rollup
     .rollup({
         entry: 'release/index.js',
-        sourceMap: true,
         plugins: [
             nodeResolve({jsnext: true, main: true}),
             commonjs({
@@ -32,9 +30,10 @@ gulp.task('bundle', ['ngc'], done => rollup
         format: 'umd',
         moduleName: 'ng.parse',
         dest: 'release/bundles/angular2parse.umd.js',
+        sourceMap: true,
         globals: {
             '@angular/core': 'ng.core',
-        },
+        }
     })));
 
 gulp.task('package-json', function() {

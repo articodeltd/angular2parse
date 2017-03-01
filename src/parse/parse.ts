@@ -17,9 +17,7 @@ export class Parse {
         const compiler: any = this._compiler;
         const pipeCache = compiler._delegate._metadataResolver._pipeCache;
 
-        for (let [pipe, pipeMetadata] of pipeCache) {
-            this._pipesCache.set(pipeMetadata.name, new pipe());
-        }
+        pipeCache.forEach((pipeMetadata, pipe) => this._pipesCache.set(pipeMetadata.name, new pipe()));
     }
 
     eval(expression: string): Function {
