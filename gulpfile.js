@@ -1,20 +1,41 @@
 const gulp = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const webpack = require('webpack');
 const ngc = require('gulp-ngc');
 const jsonTransform = require('gulp-json-transform');
 const clean = require('gulp-clean');
+const commonjs = require('rollup-plugin-commonjs');
+const nodeResolve = require('rollup-plugin-node-resolve');
+const rollup = require('rollup');
+const sourcemaps = require('rollup-plugin-sourcemaps');
 
 gulp.task('ngc', () => {
-    return ngc('./tsconfig-aot.json');
+    return ngc('tsconfig.esm.json');
 });
 
-gulp.task('es5', ['ngc'], () => {
-    return gulp.src(["./release/**/*.js", "!node_modules/**/*.*"])
-        .pipe(babel())
-        .pipe(gulp.dest('./release'));
-});
+gulp.task('bundle', ['ngc'], done => rollup
+    .rollup({
+        entry: 'release/index.js',
+        sourceMap: true,
+        plugins: [
+            nodeResolve({jsnext: true, main: true}),
+            commonjs({
+                include: 'node_modules/**',
+            }),
+            sourcemaps()
+        ],
+        external: [
+            '@angular/core',
+        ]
+    })
+    .then(bundle => bundle.write({
+        format: 'umd',
+        moduleName: 'ng.parse',
+        dest: 'release/bundles/angular2parse.umd.js',
+        globals: {
+            '@angular/core': 'ng.core',
+        },
+    })));
 
 gulp.task('package-json', function() {
     gulp.src('./package.json')
@@ -26,7 +47,7 @@ gulp.task('package-json', function() {
                 delete data.scripts.publish;
             }
 
-            data.main = 'index.js';
+            data.main = 'bundles/angular2parse.umd.js';
 
             return data;
         }))
@@ -43,6 +64,6 @@ gulp.task('clean', function () {
         .pipe(clean());
 });
 
-gulp.task('build', ['clean', 'es5', 'package-json', 'readme']);
+gulp.task('build', ['clean', 'bundle', 'package-json', 'readme']);
 
 
