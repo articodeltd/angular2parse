@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./release",
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
+  },
+  "angularCompilerOptions": {
+    "genDir": "./release",
+    "strictMetadataEmit": true,
+    "skipTemplateCodegen": true
+  }
+}
