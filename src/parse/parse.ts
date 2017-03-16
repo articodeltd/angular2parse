@@ -12,12 +12,13 @@ export class Parse {
     /**
      * Used to dependency inject the Angular 2 parser.
      */
-    constructor(private _compiler : Compiler) {
+    constructor(private _compiler: Compiler) {
         const compiler: any = this._compiler;
         const pipeCache = compiler._delegate._metadataResolver._pipeCache;
 
         pipeCache.forEach((pipeMetadata, pipe) => this._pipesCache.set(pipeMetadata.name, new pipe()));
     }
+
 
     eval(expression: string): Function {
         let ast: ASTWithSource = null;

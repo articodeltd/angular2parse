@@ -48,7 +48,8 @@ export class ParseVisitorResolver extends RecursiveAstVisitor {
     visitConditional(ast: Conditional, context: any): any {
         if (ast.condition.visit(this, context)) {
             return ast.trueExp.visit(this, context);
-        } else if (util.isPresent(ast.falseExp)) {
+        }
+        else if (util.isPresent(ast.falseExp)) {
             return ast.falseExp.visit(this, context);
         }
 

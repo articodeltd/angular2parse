@@ -1,4 +1,4 @@
-export function compileToJSON (json: any) {
+export function compileToJSON(json: any) {
     return JSON.stringify(json).replace(/"/g, '');
 }
 
