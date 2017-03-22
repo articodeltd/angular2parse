@@ -84,7 +84,7 @@ export class ParseVisitorResolver extends RecursiveAstVisitor {
         }
 
         const args = this.visitAll(ast.args, context);
-        return target.apply(null, args);
+        return target.apply(target, args);
     }
 
     visitImplicitReceiver(ast: ImplicitReceiver, context: any): any {

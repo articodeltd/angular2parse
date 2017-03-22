@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TGFT/angular2parse.git"
+    "url": "git+https://github.com/TGFTech/angular2parse.git"
   },
   "keywords": [
     "angular",
@@ -19,12 +19,12 @@
     "parser",
     "lexer"
   ],
-  "author": "TGFT",
+  "author": "TGFTech",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TGFT/angular2parse/issues"
+    "url": "https://github.com/TGFTech/angular2parse/issues"
   },
-  "homepage": "https://github.com/TGFT/angular2parse#readme",
+  "homepage": "https://github.com/TGFTech/angular2parse#readme",
   "devDependencies": {
     "@angular/compiler": "^2.4.8",
     "@angular/compiler-cli": "^2.4.8",
