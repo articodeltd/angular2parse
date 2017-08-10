@@ -6,7 +6,9 @@
   "scripts": {
     "build": "node_modules\\.bin\\gulp build",
     "publish": "npm publish release",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rollup": "rollup -cza",
+    "ngc": "ngc -p tsconfig.esm.json"
   },
   "repository": {
     "type": "git",
@@ -41,7 +43,7 @@
     "gulp-typescript": "^3.1.5",
     "gulp-webpack": "^1.5.0",
     "merge2": "^1.0.3",
-    "rollup": "^0.41.4",
+    "rollup": "^0.41.6",
     "rollup-plugin-commonjs": "^7.0.0",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-sourcemaps": "^0.4.1",
