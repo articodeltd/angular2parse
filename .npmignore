@@ -1,13 +1,13 @@
+.idea/
+node_modules/
+
 # ignore the .ts files
-src/**/*.ts
+*.ts
 
 # include the .d.ts files
-!src/*.d.ts
-!src/**/*.d.ts
+!*.d.ts
 
 # configuration files
-index.ts
-tslint.json
 tsconfig.json
 rollup.config.js
 .npmignore

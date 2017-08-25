@@ -2,10 +2,10 @@
   "name": "angular2parse",
   "version": "1.0.4",
   "description": "parse util for angular expressions",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
+    "publish": "npm run dist && npm publish",
     "dist": "npm run clean && npm run ngc && npm run rollup",
-    "publish": "npm publish release",
     "test": "echo \"Error: no test specified\" && exit 1",
     "rollup": "rollup -cza",
     "ngc": "ngc -p tsconfig.json",
