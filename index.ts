@@ -1,2 +1,2 @@
-export * from "./src/parse/parse";
+export * from "./src/parse";
 export * from "./src/module";

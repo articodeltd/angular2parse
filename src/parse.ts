@@ -1,7 +1,6 @@
-import {Injectable, Compiler} from "@angular/core";
-import {Parser, Lexer} from "../angular/compiler";
-import {ASTWithSource} from "../angular/compiler";
-import {ParseVisitorResolver, ParseVisitorCompiler} from "../visitors";
+import { Injectable, Compiler } from '@angular/core';
+import { Parser, Lexer, ASTWithSource } from './angular';
+import { ParseVisitorResolver, ParseVisitorCompiler } from './visitors';
 
 @Injectable()
 export class Parse {
@@ -15,7 +14,7 @@ export class Parse {
      */
     constructor(private _compiler : Compiler) {
         const compiler: any = this._compiler;
-        const pipeCache = compiler._delegate._metadataResolver._pipeCache;
+        const pipeCache: Map<any, any> = compiler._delegate._metadataResolver._pipeCache;
 
         pipeCache.forEach((pipeMetadata, pipe) => this._pipesCache.set(pipeMetadata.name, new pipe()));
     }
