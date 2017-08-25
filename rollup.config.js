@@ -1,7 +1,7 @@
 export default {
     entry: 'index.js',
     dest: 'bundles/angular2parse.umd.js',
-    sourceMap: true,
+    sourceMap: 'inline',
     format: 'umd',
     exports: 'named',
     onwarn: function(warning) {},
