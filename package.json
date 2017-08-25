@@ -1,6 +1,6 @@
 {
   "name": "angular2parse",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "parse util for angular expressions",
   "main": "index.js",
   "scripts": {
