@@ -1,5 +1,5 @@
-import {NgModule} from "@angular/core";
-import {Parse} from "./parse/parse";
+import { NgModule } from '@angular/core';
+import { Parse } from './parse';
 
 @NgModule({
     providers: [Parse]

@@ -1,4 +1,4 @@
-.idea
-node_modules
-release
+.idea/
+node_modules/
+bundles/
 npm-debug.log

@@ -1,0 +1,14 @@
+.idea/
+node_modules/
+
+# ignore the .ts files
+*.ts
+
+# include the .d.ts files
+!*.d.ts
+
+# configuration files
+tsconfig.json
+rollup.config.js
+.npmignore
+npm-debug.log

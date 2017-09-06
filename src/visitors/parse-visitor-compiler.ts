@@ -20,8 +20,8 @@ import {
     SafePropertyRead,
     SafeMethodCall,
     Quote
-} from "../../angular/compiler";
-import {compileToJSON} from "../../util/lang";
+} from '../angular';
+import { compileToJSON } from '../util';
 
 export class ParseVisitorCompiler extends RecursiveAstVisitor {
 

@@ -20,9 +20,9 @@ import {
     SafePropertyRead,
     SafeMethodCall,
     Quote
-} from "../../angular/compiler";
-import * as util from "../../util/lang";
-import {BinaryOperations} from "../../util/binary-operations"
+} from '../angular';
+import * as util from '../util';
+import { BinaryOperations } from '../util/binary-operations';
 
 export class ParseVisitorResolver extends RecursiveAstVisitor {
 

@@ -1,20 +1,31 @@
 {
   "compilerOptions": {
-    "outDir": "release",
-    "module": "es6",
-    "target": "es6",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
     "sourceMap": true,
     "declaration": true,
-    "lib": ["es6", "dom"],
-    "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "moduleResolution": "node"
+    "experimentalDecorators": true,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "./node_modules/@types/"
+    ]
   },
+
+  "files": [
+    "./index.ts"
+  ],
+
+  "exclude": [
+    "./node_modules"
+  ],
+
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true
-  },
-  "exclude": [
-    "node_modules"
-  ]
+  }
 }
