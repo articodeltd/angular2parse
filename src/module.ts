@@ -1,8 +1,14 @@
-import { NgModule } from '@angular/core';
-import { Parse } from './parse';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { Parse, PIPES_CONFIG, PipesConfig } from './parse';
 
 @NgModule({
-    providers: [Parse]
+  providers: [Parse]
 })
 export class Angular2ParseModule {
+  static forRoot(pipesConfigMap: PipesConfig[]): ModuleWithProviders {
+    return {
+      ngModule: Angular2ParseModule,
+      providers: [{provide: PIPES_CONFIG, multi: true, useValue: pipesConfigMap || []}]
+    }
+  }
 }
