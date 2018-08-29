@@ -1,6 +1,6 @@
 {
   "name": "angular2parse",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "parse util for angular expressions",
   "main": "bundles/angular2parse.umd",
   "typings": "index.d.ts",
