@@ -4,15 +4,15 @@ Parse util for angular expressions:  html string -> angular temaplte
 # install 
 `npm install angular2parse`
 
-# usage 
-```typescript
+```typescript 
 // app.module.ts
 @NgModule({
   imports: [Angular2ParseModule, ...],
   // ...
 export class AppModule {}
-
-// my-service.ts
+```
+# usage 
+```typescript
 import { Parse } from 'angular2parse';
 
 @Injectable()
