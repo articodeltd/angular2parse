@@ -2,7 +2,7 @@
 Parse util for angular expressions:  html string -> angular temaplte 
 
 # install 
-npm install angular2parse
+`npm install angular2parse`
 
 # usage 
 ```typescript
