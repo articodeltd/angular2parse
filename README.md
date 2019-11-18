@@ -6,6 +6,13 @@ Parse util for angular expressions:  html string -> angular temaplte
 
 # usage 
 ```typescript
+// app.module.ts
+@NgModule({
+  imports: [Angular2ParseModule, ...],
+  // ...
+export class AppModule {}
+
+// my-service.ts
 import { Parse } from 'angular2parse';
 
 @Injectable()
