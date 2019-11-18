@@ -9,6 +9,7 @@ Parse util for angular expressions:  html string -> angular temaplte
 @NgModule({
   imports: [Angular2ParseModule, ...],
   // ...
+})
 class AppModule {}
 ```
 # usage 
