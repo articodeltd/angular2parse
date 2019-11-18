@@ -9,7 +9,7 @@ Parse util for angular expressions:  html string -> angular temaplte
 @NgModule({
   imports: [Angular2ParseModule, ...],
   // ...
-export class AppModule {}
+class AppModule {}
 ```
 # usage 
 ```typescript
