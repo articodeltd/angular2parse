@@ -9,7 +9,7 @@ export interface PipesConfig {
   pipeInstance: any;
 }
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class Parse {
   private _parser: Parser = new Parser(new Lexer());
   private _pipesCache: Map<string, any> = new Map<string, any>();
