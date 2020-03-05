@@ -20,14 +20,6 @@
               "tsConfig": "projects/angular2parse/tsconfig.lib.prod.json"
             }
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/angular2parse/src/test.ts",
-            "tsConfig": "projects/angular2parse/tsconfig.spec.json",
-            "karmaConfig": "projects/angular2parse/karma.conf.js"
-          }
         }
       }
     }},
