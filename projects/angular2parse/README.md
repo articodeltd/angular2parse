@@ -1,24 +1,49 @@
-# Angular2parse
+# angular2parse
+Parse util for angular expressions:  html string -> angular temaplte 
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+# install 
+`npm install angular2parse`
 
-## Code scaffolding
+```typescript 
+// app.module.ts
+@NgModule({
+  imports: [Angular2ParseModule, ...],
+  // ...
+})
+class AppModule {}
+```
+# usage 
+```typescript
+import { Parse } from 'angular2parse';
 
-Run `ng generate component component-name --project angular2parse` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular2parse`.
-> Note: Don't forget to add `--project angular2parse` or else it will be added to the default project in your `angular.json` file. 
+@Injectable()
+class MyService {
+  constructor(private parser: Parse) {}
+  
+  parseAngularString() {
+    const expression = `{
+	positions: track.positions,
+	cornerType: getCornerType(),
+	material: track.color,
+	width : 200000.0 }`;
 
-## Build
+   const expressionEvalFn = this.parser.eval(expression)
+  
+   const context = {
+      getCornerType: () => 'value',
+      track: {
+          positions: [1,2,3],
+          color: 'red',
+        }
+      }
+   };
+    
+   const result = expressionEvalFn(context);
+   console.log(result);
+   // {positions: [1,2,3], cornerType: 'value', material: 'red', width: 2000}
+  
+}
 
-Run `ng build angular2parse` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
 
-## Publishing
-
-After building your library with `ng build angular2parse`, go to the dist folder `cd dist/angular2parse` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test angular2parse` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
