@@ -14,11 +14,11 @@
     "lib:publish": "npm run build:prod; cd dist/angular2parse; npm publish"
   },
   "dependencies": {
-    "@angular/common": "^11.0.1",
-    "@angular/compiler": "^11.0.2",
-    "@angular/core": "^11.0.2",
-    "@angular/platform-browser": "^11.0.2",
-    "@angular/platform-browser-dynamic": "^11.0.2",
+    "@angular/common": "~9.0.2",
+    "@angular/compiler": "~9.0.2",
+    "@angular/core": "~9.0.2",
+    "@angular/platform-browser": "~9.0.2",
+    "@angular/platform-browser-dynamic": "~9.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
